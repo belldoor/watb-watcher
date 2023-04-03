@@ -41,18 +41,55 @@ After accessing Naver with a browser, log in in advance with an account that has
 ### Run crawler script
 
 ```sh
-~/workspace/watb-watcher
-> npm run start
-[
-    {
-        "type": "article",
-        "link": "https://cafe.naver.com/ArticleRead.nhn?clubid=15448608&page=1&userDisplay=50&boardtype=L&articleid=345192&referrerAllArticles=true",
-        "nickname": "Vic721",
-        "text": "사우스햄튼전 패배에도 불구, 보드진은 포재앙에게 발전하는 모습을 요구했고, 여전히 그를 지지하는 태도를 보였다. 하지만 결과적으로 보드진이 그를 지지할 수 없고, 더이상 감독직을 유지할 수 없게 만든 것은 다름 아닌 포터 본인의 결정들이었다."
+➜  watb-watcher git:(main) ✗ npm run start
+
+> watb-watcher@1.0.0 start
+> node src/index.js
+
+# Checking [ (1/5) page of (1/50) article ] in progres..
+# Checking [ (1/5) page of (2/50) article ] in progres..
+# Checking [ (1/5) page of (3/50) article ] in progres..
+# Checking [ (1/5) page of (4/50) article ] in progres..
+# Checking [ (1/5) page of (5/50) article ] in progres..
+...
+{
+        "type": "comment",
+        "link": "https://cafe.naver.com/ArticleRead.nhn?clubid=15448608&page=5&userDisplay=50&boardtype=L&articleid=345030&referrerAllArticles=true",
+        "nickname": "AJR",
+        "text": "아아.. 포복절... 드디어...",
+        "keyword": "포복절"
     },
-    ...
+    {
+        "type": "comment",
+        "link": "https://cafe.naver.com/ArticleRead.nhn?clubid=15448608&page=5&userDisplay=50&boardtype=L&articleid=345030&referrerAllArticles=true",
+        "nickname": "메이슨캉테",
+        "text": "포경완료~~~ 아 물론 포터경질이요~~",
+        "keyword": "포경"
+    },
+    {
+        "type": "comment",
+        "link": "https://cafe.naver.com/ArticleRead.nhn?clubid=15448608&page=5&userDisplay=50&boardtype=L&articleid=345030&referrerAllArticles=true",
+        "nickname": "사리생김",
+        "text": "포복절 그 날이 오면",
+        "keyword": "포복절"
+    },
+    {
+        "type": "comment",
+        "link": "https://cafe.naver.com/ArticleRead.nhn?clubid=15448608&page=5&userDisplay=50&boardtype=L&articleid=345024&referrerAllArticles=true",
+        "nickname": "릴러말즈",
+        "text": "이미 대망한 시즌 하루빨리 재앙같은 감독 경질되길",
+        "keyword": "재앙"
+    },
+    {
+        "type": "comment",
+        "link": "https://cafe.naver.com/ArticleRead.nhn?clubid=15448608&page=5&userDisplay=50&boardtype=L&articleid=345012&referrerAllArticles=true",
+        "nickname": "링크",
+        "text": "진짜 축구를 아예 안봐왔던 걸까요 어떻게 이렇게 생각이 없는지 재앙그자체인데 경기들이 ㅠ",
+        "keyword": "재앙"
+    }
+]
 ```
 
 ### Check your google sheet
 
-OR check `result` path for results
+OR check `result/*` path for results

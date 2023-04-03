@@ -18,7 +18,11 @@
 > mv .env.sample .env
 ```
 
-And set `.env` file for upload result to Google Spread Sheet
+And set `.env` file for upload result to [Google Spread Sheet](https://docs.google.com/spreadsheets)
+
+### Google Service Account Key File
+
+[Google Service Account key file](https://console.cloud.google.com/iam-admin/serviceaccounts) for Google Sheet API requests is located in the top-level path.
 
 ### Run Chrome with debugging port for Puppeteer detached mode
 

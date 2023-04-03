@@ -5,7 +5,7 @@ const _ = require('lodash');
 const { google } = require('googleapis');
 require("dotenv").config();
 
-const googleKeyPath = './watb-secret.json';
+const googleKeyPath = 'watb-secret.json';
 if (!fs.existsSync(googleKeyPath)) {
   throw new Error('# Google Key File Not Exists!');
 }
@@ -36,7 +36,7 @@ const result = [];
     height: 1300
   })
 
-  const pageRange = _.range(0, checkPageRange).map(n => n + 1);
+  const pageRange = _.range(1, checkPageRange + 1);
   for (const pageIdx of pageRange) {
     const listUrl = `https://cafe.naver.com/chelseasupporters?iframe_url=/ArticleList.nhn%3Fsearch.clubid=15448608%26userDisplay=50%26search.boardtype=L%26search.specialmenutype=%26search.totalCount=501%26search.cafeId=15448608%26search.page=${pageIdx}`;
 
@@ -55,8 +55,8 @@ const result = [];
     // Except notices
     const filteredLinks = links.filter(d => d.indexOf('specialmenutype') === -1);
 
-    for (const [idx, link] of filteredLinks) {
-      console.info(`# Checking <${pageIdx} page of (${idx} / ${filteredLinks.length}) article> in progres..`)
+    for (const [idx, link] of filteredLinks.entries()) {
+      console.info(`# Checking [ (${pageIdx}/${checkPageRange}) page of (${idx + 1}/${filteredLinks.length}) article ] in progres..`)
       await page.goto(link);
       await page.waitForSelector(iframeSelector);
       await page.waitForTimeout(3000);
@@ -110,7 +110,7 @@ const result = [];
   console.info(JSON.stringify(result, null, 4));
 
   try {
-    fs.writeFileSync(`./result/${sheetName}.json`, JSON.stringify(result, null, 4));
+    fs.writeFileSync(`result/${sheetName}.json`, JSON.stringify(result, null, 4));
   } catch (err) {
     console.error(err);
   }

@@ -5,8 +5,7 @@
 ## Install
 
 ```sh
-~/workspace/watb-watcher
-> npm install
+➜  watb-watcher git:(main) ✗ npm install
 ```
 
 ## How to run
@@ -14,8 +13,7 @@
 ### Set .env
 
 ```sh
-~/workspace/watb-watcher
-> mv .env.sample .env
+➜  watb-watcher git:(main) ✗ cp .env.sample .env
 ```
 
 And set `.env` file for upload result to [Google Spread Sheet](https://docs.google.com/spreadsheets)
@@ -27,8 +25,7 @@ And set `.env` file for upload result to [Google Spread Sheet](https://docs.goog
 ### Run Chrome with debugging port for Puppeteer detached mode
 
 ```sh
-~/workspace/watb-watcher
-> sudo /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+➜  watb-watcher git:(main) ✗ sudo /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
 
 DevTools listening on ws://127.0.0.1:9222/devtools/browser/b7279b33-2013-4b65-9792-62a89f8d6bdf
 ...
